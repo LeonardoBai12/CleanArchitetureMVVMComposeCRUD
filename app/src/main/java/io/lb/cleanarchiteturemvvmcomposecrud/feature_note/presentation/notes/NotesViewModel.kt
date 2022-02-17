@@ -25,7 +25,7 @@ class NotesViewModel @Inject constructor (
     private var getNotesJob: Job? = null
 
     init {
-        getNotes(NoteOrder.Date(OrderType.Desencding))
+        getNotes(NoteOrder.Date(OrderType.Descending))
     }
 
     fun onEvent(event: NotesEvent) {

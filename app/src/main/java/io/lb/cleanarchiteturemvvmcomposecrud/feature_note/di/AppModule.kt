@@ -8,10 +8,7 @@ import dagger.hilt.InstallIn
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.data.data_source.NoteDatabase
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.data.repository.NoteRepository
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.data.repository.NoteRepositoryImpl
-import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.use_case.AddNoteUseCase
-import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.use_case.DeleteNoteUseCase
-import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.use_case.GetNotesUseCase
-import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.use_case.NoteUseCases
+import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.use_case.*
 import javax.inject.Singleton
 
 @Module
@@ -40,6 +37,7 @@ object AppModule {
             getNotesUseCase = GetNotesUseCase(noteRepository),
             deleteNoteUseCase = DeleteNoteUseCase(noteRepository),
             addNoteUseCase = AddNoteUseCase(noteRepository),
+            getNoteUseCase = GetNoteUseCase(noteRepository),
         )
     }
 }

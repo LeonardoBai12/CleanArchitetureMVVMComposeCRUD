@@ -10,4 +10,8 @@ import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.model.Note
 )
 abstract class NoteDatabase : RoomDatabase() {
     abstract val noteDAO: NoteDao
+
+    companion object {
+        const val DATABASE_NAME = "notes_db"
+    }
 }

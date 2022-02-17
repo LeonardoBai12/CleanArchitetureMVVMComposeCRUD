@@ -1,4 +1,4 @@
-package io.lb.cleanarchiteturemvvmcomposecrud.feature_note.data.repository
+package io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.repository
 
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.model.Note
 import kotlinx.coroutines.flow.Flow

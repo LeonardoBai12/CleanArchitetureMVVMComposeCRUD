@@ -1,6 +1,6 @@
 package io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.use_case
 
-import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.data.repository.NoteRepository
+import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.repository.NoteRepository
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.model.Note
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.util.NoteOrder
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.util.OrderType

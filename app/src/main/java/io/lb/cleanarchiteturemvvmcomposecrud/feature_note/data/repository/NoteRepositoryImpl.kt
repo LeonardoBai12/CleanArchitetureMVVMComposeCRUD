@@ -2,6 +2,7 @@ package io.lb.cleanarchiteturemvvmcomposecrud.feature_note.data.repository
 
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.data.data_source.NoteDao
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.model.Note
+import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.repository.NoteRepository
 import kotlinx.coroutines.flow.Flow
 
 class NoteRepositoryImpl(

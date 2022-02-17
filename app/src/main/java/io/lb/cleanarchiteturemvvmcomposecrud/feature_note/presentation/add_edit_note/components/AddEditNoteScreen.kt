@@ -24,6 +24,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.domain.model.Note
 import io.lb.cleanarchiteturemvvmcomposecrud.feature_note.presentation.add_edit_note.components.components.TransparentHintTextField
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @Composable
@@ -32,14 +33,14 @@ fun AddEditNoteScreen(
     noteColor: Int,
     viewModel: AddEditNoteViewModel = hiltViewModel()
 ) {
-    val titleState = viewModel.noteTitle.value
-    val contentState = viewModel.noteContent.value
+    val titleState = viewModel.titleState.value
+    val contentState = viewModel.contentState.value
 
     val scaffoldState = rememberScaffoldState()
 
     val noteBackgroundAnimatable = remember {
         Animatable(
-            Color(if (noteColor != -1) noteColor else viewModel.noteColor.value)
+            Color(if (noteColor != -1) noteColor else viewModel.colorState.value)
         )
     }
     val scope = rememberCoroutineScope()
@@ -47,7 +48,7 @@ fun AddEditNoteScreen(
     LaunchedEffect(key1 = true) {
         viewModel.eventFlow.collectLatest { event ->
             when(event) {
-                is AddEditNoteViewModel.UiEvent.ShowSnackbar -> {
+                is AddEditNoteViewModel.UiEvent.ShowSnackBar -> {
                     scaffoldState.snackbarHostState.showSnackbar(
                         message = event.message
                     )
@@ -94,7 +95,7 @@ fun AddEditNoteScreen(
                             .background(color)
                             .border(
                                 width = 3.dp,
-                                color = if (viewModel.noteColor.value == colorInt) {
+                                color = if (viewModel.colorState.value == colorInt) {
                                     Color.Black
                                 } else Color.Transparent,
                                 shape = CircleShape

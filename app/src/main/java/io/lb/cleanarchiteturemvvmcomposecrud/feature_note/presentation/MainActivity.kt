@@ -1,4 +1,4 @@
-package io.lb.cleanarchiteturemvvmcomposecrud
+package io.lb.cleanarchiteturemvvmcomposecrud.feature_note.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
